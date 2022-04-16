@@ -56,4 +56,4 @@ jobs:
         with:
           node-version: "14"
       - name: deployz
-        with: make deploy
+        run: make deploy
