@@ -9,3 +9,14 @@ image:
 
 test:
 	go test
+
+installdeploydep:
+	cd deploy/
+	npm install -g aws-cdk
+	npm install
+	cd ..
+
+deploy:
+	cd deploy/ 
+	cdk deploy
+	cd ..
