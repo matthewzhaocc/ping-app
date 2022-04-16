@@ -21,3 +21,17 @@ jobs:
           role-to-assume: arn:aws:iam::661723793673:role/github-action-admin
           role-session-name: githubactionssession
           aws-region: ${{ env.AWS_REGION }}
+      - name: setup env
+        runs: ./scripts/setup_env.sh
+      - name: build image
+        runs: ./scripts/build_image.sh
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v3
+      - name: setup env
+        runs: ./scripts/setup_env.sh
+      - name: test - build
+        runs: ./scripts/test_app.sh
