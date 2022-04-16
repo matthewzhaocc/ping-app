@@ -22,9 +22,9 @@ jobs:
           role-session-name: githubactionssession
           aws-region: ${{ env.AWS_REGION }}
       - name: setup env
-        runs: ./scripts/setup_env.sh
+        run: ./scripts/setup_env.sh
       - name: build image
-        runs: ./scripts/build_image.sh
+        run: ./scripts/build_image.sh
 
   test:
     runs-on: ubuntu-latest
@@ -32,6 +32,6 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v3
       - name: setup env
-        runs: ./scripts/setup_env.sh
+        run: ./scripts/setup_env.sh
       - name: test - build
-        runs: ./scripts/test_app.sh
+        run: ./scripts/test_app.sh
